@@ -218,10 +218,66 @@ mật khẩu : dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 # level 11-12
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit11@bandit.labs.overthewire.org -p 2220`
 
+**yêu cầu**: tìm mật khẩu trong file `data.txt1 khi các ký tự bị xoay tăng 13 ký tự trong bảng chữ cái
+
+1. `ls` để liệt kê các file trong hệ thống
+2. thử đọc file bằng `cat data.txt`
+
+![image](https://github.com/user-attachments/assets/9e0c9792-7d8c-4e6e-9424-5a2daa6eadd5)
+
+
+3. dùng lệnh `cat data.txt | tr '[A-Z a-z]' '[N-ZA-M n-za-m]'` để xắp sếp lại các ký tự tìm mật khẩu
+
+   - `tr`: là lệnh để thay thế hoặc loại bỏ các ký tự theo cú pháp `tr [option] [set1] [set2]`
+     
+             + `set1`: liệt kê các ký tự bị thay đổi hoặc xóa bỏ
+             + `set2`: liệt kê các ký tự sẽ thay thế các ký tự trong set 1
+   
+![image](https://github.com/user-attachments/assets/4e9c39fd-4985-4323-b7b8-8d43f215b633)
+
+mật khẩu: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+4. `exit` để thoát khỏi level
+
+
+# level 12-13
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit12@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: tìm mật khẩu trogn file `data.txt` là file hexdump của 1 file bị nén nhiều lần 
+
+1. ta dùng lệnh `mktemp -d` để tạo ra 1 file tạm thời có đầy đủ quyền chỉnh sửa để ta có thể giải
+
+![image](https://github.com/user-attachments/assets/d61ed640-1f12-4e80-94ca-e96d360e189c)
+
+
+2. sau đó ta copy file `data.txt` vào trong file mới tạo, rồi di chuyển vào file đó để có đầy đủ quyền chỉnh sửa file
+
+![image](https://github.com/user-attachments/assets/f9c8c799-e5d3-4269-b948-a3ec82a0de3f)
+
+4. dùng lệnh `xxr -r data.txt > data` để giải mã hexdump của file `data.txt` rồi lưu trữ nó vào file `data`
+
+5. sau đó ta dùng tổ hợp các lệnh để giải
+   - `file` để kiểu tra định dạng file
+   - `ls` để liệt kê các file sau khi giải nén
+   - `mv file_name file_name` để đổi tên file về đúng định dạng nén của nó để giải nén
+   - sử dụng các câu lệnh để giải nén:
+   
+             + `gunzip file_name.gz`: để giải nén các file có định dạng gz
+             + `bzip2 -d file_name.bz2`: để giải nén các file có định dạng bz2
+             + `tar -xvf file_name`: để giải nén các file có định dạng tar
+
+![image](https://github.com/user-attachments/assets/dbbc8332-5ade-42ae-9f0b-6ec0d4b44419)
+![image](https://github.com/user-attachments/assets/6eec66b7-82ef-4f2e-9844-59dc13d91dcf)
+![image](https://github.com/user-attachments/assets/49ec72ce-1306-4044-adfd-81c6a0b4b306)
+
+mật khẩu: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+6. `exit` để thoát khỏi level
+
+
+
+# level 13-14
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit13@bandit.labs.overthewire.org -p 2220`
+
 **yêu cầu**: 
-
-
-
-
-
 
