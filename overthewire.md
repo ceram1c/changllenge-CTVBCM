@@ -279,5 +279,20 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 # level 13-14
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit13@bandit.labs.overthewire.org -p 2220`
 
-**yêu cầu**: 
+**yêu cầu**: tìm mật khẩu nằm trong đường dẫn `/etc/bandit_pass/bandit14` chỉ có thể mời bằng user `bandit14` trong localhost
+
+1. dùng lệnh `ls` để kiểm tra các file, ta thấy 1 file `sshkey.private` là key để ta đăng nhập vào user `bandit14`
+2. đăng nhập vào `localhost` với user `bandit14` và `sshkey.private`, cổng 2220 bằng lệnh:
+
+   `ssh -i sshkey.private bandit14@localhost -p 2220`
+
+3. sau đó dùng lệnh `cat /etc/bandit_pass/bandit14` để đọc mật khẩu
+
+        mật khẩu: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+4. `exit` để thoát khỏi level
+
+
+# level 14-15
+
 
