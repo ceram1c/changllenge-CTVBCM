@@ -11,7 +11,7 @@
 1. `ls` để liệt kê các file trong hệ thống
 2. dùng lệnh `cat readme` để đọc mật khẩu trong file
 
-mật khẩu : ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+        mật khẩu : ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
 3. `exit` để thoát khỏi level
 
@@ -24,7 +24,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 1. `ls` để liệt kê các file trong hệ thống
 2. dùng lệnh `cat ./-` để đọc mật khẩu trong file
 
-mật khẩu : 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+        mật khẩu : 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
 3. `exit` để thoát khỏi level
 
@@ -37,7 +37,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 1. `ls` để liệt kê các file trong hệ thống
 2. dùng lệnh `cat "spaces in this filename"` để đọc mật khẩu trong file
 
-mật khẩu : MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+        mật khẩu : MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 
 3. `exit` để thoát khỏi level
 
@@ -54,7 +54,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 5. dùng lệnh `cat ...Hiding-From-You` để đọc mật khẩu trong file
 
-mật khẩu: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+        mật khẩu: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 
 6. `exit` để thoát khỏi level
 
@@ -72,7 +72,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 3. dùng lệnh `cat ./-file07` để đọc mật khẩu trong file
 
-mật khẩu: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+        mật khẩu: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
 4. `exit` để thoát khỏi level
 
@@ -103,7 +103,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 4. dùng lệnh `cat ./maybehere07/.file2` để đọc mật khẩu trong file
 
-mật khẩu: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+        mật khẩu: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
 5. `exit` để thoát khỏi level
 
@@ -130,7 +130,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 3. dùng lệnh `cat /var/lib/dpkg/info/bandit7.password` để đọc mật khẩu
 
-mật khẩu: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+        mật khẩu: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 
 4. `exit` để thoát khỏi level
 
@@ -150,7 +150,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 5. mật khẩu nằm sau từ `millionth`
 
-mật khẩu: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+        mật khẩu: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 
 6. `exit` để thoát khỏi level
 
@@ -171,7 +171,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 ![image](https://github.com/user-attachments/assets/59016281-5a2b-4579-ba3d-4bdd1f7b8926)
 
-mật khẩu: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+        mật khẩu: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 
 3. `exit` để thoát khỏi level
 
@@ -192,7 +192,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 ![image](https://github.com/user-attachments/assets/ad9f03b4-0c32-4b7d-88a7-7ecb179f9617)
 
-mật khẩu: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+        mật khẩu: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
 3. `exit` để thoát khỏi level
 
@@ -210,7 +210,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 ![image](https://github.com/user-attachments/assets/7e7809a7-aad2-4ef8-877e-31212498d787)
 
 
-mật khẩu : dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+        mật khẩu : dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
 3. `exit` để thoát khỏi level
 
@@ -235,7 +235,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
    
 ![image](https://github.com/user-attachments/assets/4e9c39fd-4985-4323-b7b8-8d43f215b633)
 
-mật khẩu: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+        mật khẩu: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 
 4. `exit` để thoát khỏi level
 
@@ -270,7 +270,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 ![image](https://github.com/user-attachments/assets/6eec66b7-82ef-4f2e-9844-59dc13d91dcf)
 ![image](https://github.com/user-attachments/assets/49ec72ce-1306-4044-adfd-81c6a0b4b306)
 
-mật khẩu: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+        mật khẩu: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
 6. `exit` để thoát khỏi level
 
