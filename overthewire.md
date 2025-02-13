@@ -200,7 +200,25 @@ mật khẩu: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 # level 10-11
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit10@bandit.labs.overthewire.org -p 2220`
 
+**yêu cầu**: tìm mật khẩu đã bị mã hóa base64 trong file `data.txt`
 
+1. `ls` để liệt kê các file trong hệ thống
+2. dùng lệnh `cat data | base64 -d` để đọc mật khẩu trong file
+
+   -`base64 -d`: `-d` là 1 option của lệnh base64 nhằm giải mã(decode)
+
+![image](https://github.com/user-attachments/assets/7e7809a7-aad2-4ef8-877e-31212498d787)
+
+
+mật khẩu : dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+3. `exit` để thoát khỏi level
+
+
+# level 11-12
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit11@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: 
 
 
 
