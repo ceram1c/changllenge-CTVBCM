@@ -294,5 +294,48 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 
 # level 14-15
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit14@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: gửi mật khẩu level trước tới post 30000 tại localhost để nhận mật khẩu
+
+1. dùng lệnh netcat `nc localhost 30000` để truy cập, sau đó sử dụng mật khẩu của level trước để nhận mật khẩu, sau đó `ctrl+c` để thoát
+2. `exit` để thoát khỏi level
+
+        mật khẩu: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 
 
+# level 15-16
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit15@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: gửi mật khẩu level trước tới post 30001 tại localhost bằng kết nối SSL/TLS
+
+1. dùng lệnh `openssl s_client -connect localhost:30001`
+
+   - `openssl s_client`: là lệnh sử dụng để truy cập vào localhost của bandit
+  
+2. sau đó nhập mật khẩu của level trước để nhận mật khẩu
+3. `exit` để thoát khỏi level
+
+        mật khẩu: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+
+# level 16-17
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh @bandit.labs.overthewire.org -p 2220`
+
+1. sử dụng lệnh `nmap -A -p 31000-32000 localhost`
+
+   - `-A` là một option của nmap cho phép quét toàn diện các cổng từ 31000-32000
+
+![image](https://github.com/user-attachments/assets/7a8c7542-2bde-42dd-ae17-45ee5f7b283d)
+
+2. ta có thể thấy post 31790 là có khả năng nhất vì mọi post khác đều đang chạy dịch vị `echo` chỉ có mỗi post 31790 là `unkown`
+3. 
+
+
+
+
+
+
+
+
+   
