@@ -1,4 +1,4 @@
-# level 0
+![image](https://github.com/user-attachments/assets/60bebfdf-f5dc-47e6-a056-52500e6c870d)# level 0
 
 **yêu cầu**: truy cập vào host bandit.labs.overthewire.org với tài khoản mật khẩu 
 1. truy cập bằng lệnh: `ssh bandit0@bandit.labs.overthewire.org -p 2220` sau đó nhập mật khẩu `bandit0`
@@ -322,6 +322,8 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 # level 16-17
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit16@bandit.labs.overthewire.org -p 2220`
 
+**yêu cầu**: sử dụng mật khẩu level trước để gửi vào 1 host đúng trong các host từ 31000-32000 (host nào khôgn phải sẽ trả lại input) tìm mật khẩukhẩu 
+
 1. sử dụng lệnh `nmap -p 31000-32000 localhost` để quét dữ liệu ở các cổng, sau khi quét xong sẽ trả kết quả như hình là 5 cổng khônng biết đang chạy dịch vụ gì khá là khả nghi.
 
 ![image](https://github.com/user-attachments/assets/4419e0f6-69fb-4995-83e0-71d22e8e7373)
@@ -374,6 +376,67 @@ dòng trên là dòng khác ở `password.new` so với dòng dưới ở `passw
 
 # level 18-19
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit18@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: tìm mật khẩu nằm trong file `readme`, nhưng file `.bashrc` đã bị sửa để làm chúng ta bị thoát ra ngay sau khi đăng nhập vào host. 
+
+1. ở bài này, sau khi ta nhập `ssh bandit18@bandit.labs.overthewire.org -p 2220` và mật khẩu ngay lập tức ta sẽ bị thoát ra khỏi host như hình
+
+![image](https://github.com/user-attachments/assets/4100e4ec-1f48-4d10-93d6-03230619fc5e)
+
+2. thông thường khi ta ssh để kết nối, ta sẽ được cung cấp shell (bash) mặc định và bash sẽ đọc và thực thi nội dung của tập tin `.bashrs`
+3. nhưng ở level này `.bashrs` đã bị chỉnh sửa để logout máy chủ ngay sau khi ta kết nối. Vì vậy ta sẽ tạm thời vô hiệu hóa 1 phần của `.bashrs` bằng cách sử dụng câu lệnh `bash --noprofile` kết hợp với lệnh `ssh` để kết nối
+
+   cú pháp: `ssh bandit18@bandit.labs.overthewire.org -p 2220 "bash --noprofile"`
+
+   - sau khi kết nối, cú pháp `bash --noprofile` được thực hiện nhằm khởi chạy shell bash mà không tải hồ sơ người dùng
+  
+4. `ls` để liệt kê các file trong hệ thống
+5. dùng lệnh `cat readme` để đọc mật khẩu trong file
+
+        mật khẩu: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+
+6. `exit` 2  để thoát khỏi level
+
+
+# level 19-20 
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit19@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu được dấu ở đường dẫn /etc/bandit_pass/ như các level trước nhưng chỉ mở được khi dùng setUID 
+
+1. `ls` để liệt kê các file trong hệ thống
+
+![image](https://github.com/user-attachments/assets/119e5a20-8782-4120-8882-b3e3cc4fdaea)
+
+
+2. dùng lệnh `./bandit20-do` để xem nó là gì ![image](https://github.com/user-attachments/assets/033c0284-c419-40de-ab55-0a88292afd23)
+3. sử dụng `bandit20-do` dạng như 1 user, sẽ giống như các level trước nhưng không cần phải truy cập vào user tại localhost
+4. `./bandit20-do cat /etc/bandit_pas/bandit20` để nhận mật khẩu
+
+        mật khẩu: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+
+# level 20-21
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit20@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
