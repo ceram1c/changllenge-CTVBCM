@@ -414,14 +414,99 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 
+5. `exit` 2  để thoát khỏi level
 
 # level 20-21
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit20@bandit.labs.overthewire.org -p 2220`
 
-**yêu cầu**: 
+**yêu cầu**: sử dụng setUID để tạo 1 cổng localhost trong post bất kì, sau đó nó đọc mật khẩu của level trước để trả mật khẩu của level này
+1. `ls` để liệt kê các file trong hệ thống, sau đó `./suconnect` để tìm hiểu về nó
+![image](https://github.com/user-attachments/assets/0f006c75-cd19-40f7-855b-9ebbde1d960c)
+2. `./suconnect` sẽ kết nối với 1 post nhất định, nếu đc gửi đúng mật khẩu nó sẽ trả lại mật khẩu
+3. nhưng khi cố kết nối bằng `./sunconnect <post>` với một post thì lại không thể kết nối
+
+![image](https://github.com/user-attachments/assets/57512d98-6d86-4076-9ad9-2d1d50101a41)
+
+4. vậy ta cần tạo 1 cổng kết nối nhận nhiệm vụ nghe và gửi input mình nhập vào tới post đó để kiểm tra
+5. sử dụng lệnh `nc -lvp 2808` để tạo cho post 2808 như đã giải thích
+
+   - `-l`: lắng nghe (tạo 1 cổng để chờ kết nối đến)
+   - `-v`: hiện thị ra thông tin khi kết nối (in ra output khi gửi mật khẩu tới cổng đó)
+   - `-p`: là post để sử dụng kết nối (vd 2808)
+
+![image](https://github.com/user-attachments/assets/563da622-5802-4014-904f-4fe429ff31dd)
+
+
+6. kết nối với post 2808 bằng lệnh `./suconnect 2808` với 1 terminal khác, sau đó nhập mật khẩu của level trước tại terminal trước đó đang chạy `nc -lvp 2808` để nhận mật khẩu
+
+        mật khẩu: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+
+7. `exit` 2  để thoát khỏi level
+
+# level 21-22
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit21@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu nằm  1 chương trình đang chạy trong `/etc/cron.d/`
+1. di chuyển vào `/etc/cron.d/` rồi dùng `ls` để liệt kê các file trong đó
+
+![image](https://github.com/user-attachments/assets/f623c8bb-f24a-4488-aaec-016a797b8a8b)
+
+
+2. là `level 21-22` nên ta `cat cronjob_bandit22` để đọc chương trình
+
+![image](https://github.com/user-attachments/assets/525ec926-26b7-41b1-be1a-80e49977cb8a)
+
+3. ta có thể thấy 1 chương trình đang chạy tại nguồn `/usr/bin/cronjob_bandit22.sh` vậy nên tiếp tục `cat /usr/bin/cronjob_bandit22.sh` để tìm mật khẩu
+
+![image](https://github.com/user-attachments/assets/d16e55ee-13e5-41dd-bba8-7a011b5a4e40)
+
+4. tương tự với ban nãy ta tiếp tục `cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv` để tìm mật khẩu
+
+![image](https://github.com/user-attachments/assets/b9c9f6b2-0c2f-45ed-b394-ed6f7e80a613)
+
+        mật khẩu: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+
+5. `exit` 2  để thoát khỏi level
 
 
 
+# level 22-23
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit22@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu nằm  1 chương trình đang chạy trong `/etc/cron.d/
+1.  di chuyển vào `/etc/cron.d/` rồi dùng `ls` để liệt kê các file trong đó
+
+![image](https://github.com/user-attachments/assets/f6d8561f-beec-4289-8194-caf14aab3cbe)
+
+2. là `level 22-23` nên ta `cat cronjob_bandit23` để đọc chương trình
+
+![image](https://github.com/user-attachments/assets/4748b35c-9cbb-4cff-bcc4-960fd3b81e1c)
+
+
+3. ta có thể thấy 1 chương trình đang chạy tại nguồn `/usr/bin/cronjob_bandit23.sh` vậy nên tiếp tục `cat /usr/bin/cronjob_.sh` sau đó nhận 1 số hướng dẫn
+
+![image](https://github.com/user-attachments/assets/4c4d8c6b-6a24-42a2-900e-73414bff17e8)
+
+4 `echo $(whoami)` như hướng dẫn để lần `$my name` 
+
+![image](https://github.com/user-attachments/assets/cf3be8ac-0916-4162-85cc-87d23ce195db)
+
+5. sau đó `echo $(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)` để tìm `mytaget`
+
+![image](https://github.com/user-attachments/assets/acc2f3b9-2976-4f68-81ca-57c9ef9f9aef)
+
+
+6. sau đó  `cat /tmp/8ca319486bfbbc3663ea0fbe81326349` để tìm mật khẩu
+
+![image](https://github.com/user-attachments/assets/71d07532-15c5-42b7-b25b-a702532ef410)
+
+        mật khẩu: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+
+7. `exit` 2  để thoát khỏi level
+
+
+# level 23-24
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit23@bandit.labs.overthewire.org -p 2220`
 
 
 
