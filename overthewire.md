@@ -320,22 +320,76 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 
 # level 16-17
-dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh @bandit.labs.overthewire.org -p 2220`
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit16@bandit.labs.overthewire.org -p 2220`
 
-1. sử dụng lệnh `nmap -A -p 31000-32000 localhost`
+1. sử dụng lệnh `nmap -p 31000-32000 localhost` để quét dữ liệu ở các cổng, sau khi quét xong sẽ trả kết quả như hình là 5 cổng khônng biết đang chạy dịch vụ gì khá là khả nghi.
 
-   - `-A` là một option của nmap cho phép quét toàn diện các cổng từ 31000-32000
-
-![image](https://github.com/user-attachments/assets/7a8c7542-2bde-42dd-ae17-45ee5f7b283d)
-
-2. ta có thể thấy post 31790 là có khả năng nhất vì mọi post khác đều đang chạy dịch vị `echo` chỉ có mỗi post 31790 là `unkown`
-3. 
+![image](https://github.com/user-attachments/assets/4419e0f6-69fb-4995-83e0-71d22e8e7373)
 
 
+2. sau khi thử `openssl s_client -quiet -connect localhost:port` bằng mật khẩu của level trước với từng cổng nào không phải sẽ trả lại mật khẩu thì là sai ta `ctrl+c` để thoát thì cổng `31790` là cổng ta cần tìm.
+3. `openssl s_client -quiet -connect localhost:31790`, nhập mật khẩu vào ta sẽ nhật được `private key` giống như level 13
+
+![image](https://github.com/user-attachments/assets/d4f6f077-683d-4035-9fb7-180a636a4f1b)
+
+4. `mktemp -d` tạo 1 file tạm thời để có quyền truy cập chỉnh sửa đầy đủ với các file, sau đó dùng lệnh `cd` để di chuyển vào đường 
+
+![image](https://github.com/user-attachments/assets/d153da02-fd1e-4797-bbe4-50e523589701)
+
+5. `vim sshkey.private` để tạo 1 file sau đó copy phần `private key` trên vào rồi `:wq` để thoát
+
+![image](https://github.com/user-attachments/assets/ed65f534-4303-4935-996e-895fb07b2440)
+![image](https://github.com/user-attachments/assets/9dd2c605-291a-4bc8-a6a9-aa14e9ae523f)
+
+7. `chmod 700 sshkey.private` để chỉ cấp đầy đủ quyền cho user nếu không sẽ báo lỗi như hình vì đây là một key private nên chỉ được cấp quyền riêng cho user
+
+![image](https://github.com/user-attachments/assets/d5a7a80c-16a1-46ec-9012-ff7972b93bce)
+
+8. đăng nhập vào `localhost` với user `bandit14` và `sshkey.private`, cổng 2220 bằng lệnh:
+
+   `ssh -i sshkey.private bandit17@localhost -p 2220`
+
+9. sau đó dùng lệnh `cat /etc/bandit_pass/bandit14` để đọc mật khẩu
+
+        mật khẩu: EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
+
+10. `exit` 2  để thoát khỏi level
+
+
+# level 17-18
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit17@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: có 2 file `passwords.new` và `passwords.old`, mật khẩu cần tìm ở file `passwords.new` là dòng duy nhất khác giữa 2 file 
+
+1. dùng lệnh `diff password.new password.old` để tìm sự khác biệt giữa 2 file.
+
+![image](https://github.com/user-attachments/assets/9585cd3a-981b-4cfe-98a7-9c24e63374b4)
+
+dòng trên là dòng khác ở `password.new` so với dòng dưới ở `password.old`
+
+        mật khẩu: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+
+2. `exit` 2  để thoát khỏi level
+
+
+# level 18-19
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit18@bandit.labs.overthewire.org -p 2220`
 
 
 
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
