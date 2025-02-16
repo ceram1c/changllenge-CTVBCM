@@ -483,7 +483,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 ![image](https://github.com/user-attachments/assets/4748b35c-9cbb-4cff-bcc4-960fd3b81e1c)
 
 
-3. ta có thể thấy 1 chương trình đang chạy tại nguồn `/usr/bin/cronjob_bandit23.sh` vậy nên tiếp tục `cat /usr/bin/cronjob_.sh` sau đó nhận 1 số hướng dẫn
+3. ta có thể thấy 1 chương trình đang chạy tại nguồn `/usr/bin/cronjob_bandit23.sh` vậy nên tiếp tục `cat /usr/bin/cronjob23cronjob23_.sh` sau đó nhận 1 số hướng dẫn
 
 ![image](https://github.com/user-attachments/assets/4c4d8c6b-6a24-42a2-900e-73414bff17e8)
 
@@ -508,9 +508,26 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 # level 23-24
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit23@bandit.labs.overthewire.org -p 2220`
 
+**yêu cầu**: mật khẩu nằm  1 chương trình đang chạy trong `/etc/cron.d/
+1.  di chuyển vào `/etc/cron.d/` rồi dùng `ls` để liệt kê các file trong đó
+2.  là `level 23-24` nên ta `cat cronjob_bandit24` để đọc chương trình
+3.   ta có thể thấy 1 chương trình đang chạy tại nguồn `/usr/bin/cronjob_bandit24.sh` vậy nên tiếp tục `cat /usr/bin/cronjob_bandit24_.sh` sau đó nhận 1 số hướng dẫn
 
+![image](https://github.com/user-attachments/assets/1df5b1e8-8d5f-47fc-9d1b-75b354f9afa0)
+        - có thể hiểu đoạn script này đang duyệt tất cả file trong `/var/spool/$myname/foo:`(trừ file "." và ".."), vậy đầu tiền ta phải kiểm tra `$myname` là gì bằng `$(whoami)` biết `$myname`=`bandit24`
+        - ![image](https://github.com/user-attachments/assets/5abbb85a-be12-40f9-bce4-c6c65dee8131) dòng này lấy tên của chủ sở hữu, nếu chủ sở hữu tên `bandit23` file sẽ đc thực thi trong 60s 
+        - vậy ta cần 1 file để lấy mật khẩu trong `bandit24` tại thư mục người dùng của `bandit23` sau đó đưa file vào `/var/spool/bandit24/foo:` để chạy file dưới quyền của `bandit24`
+        - nhưng ngay sau khi gửi file đó đến thì file đó sẽ bị xóa nay lâp tức trong `bandit 24`
 
+4. đầu tiên `mktemp` để tạo 1 file để thực hiện nhiệm vụ  
 
+![image](https://github.com/user-attachments/assets/c9c16370-cac1-4e6e-b6e3-1ca15f2d6a99)
+
+5. nhưng có thể thấy file ta mới tạo chỉ user mới có đầy đủ quyền truy cập, nhưng ta cần gửi file tới 1 user khác là `bandit24` vậy nên t cần cấp đầy đủ quyền cho các user khác bằng lệnh `chmod 777 /tmp/tmp.UvhIB7VyMI`
+
+![image](https://github.com/user-attachments/assets/b380aa52-4f27-49c9-bb4b-bdba5e182e2f)
+
+6. 
 
 
 
