@@ -649,7 +649,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 **yêu cầu**: mật khẩu được lưu ở 1 repository GIT từ link `ssh://bandit28-git@localhost/home/bandit28-git/repo` ở post 2220, mật khẩu của link là mật khẩu của level trước đó. Ta cần tạo 1 bản sao của repository đó về host để tìm mật khẩu
 1. do ta không được phép tạo bất kì cái gì ở tỏng thư mục home homedirectory, nên ta dùng `mktemp -d` để tạo 1 đường đẫn có đầy đủ quyền
-2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo` rồi nhập mật khẩu của level trước đó
+2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo` rồi nhập mật khẩu của level trước đó
 3. sau đó ta di chuyển vào file rồi kiếm tra và `cat` thử ra
 
 ![image](https://github.com/user-attachments/assets/8268ec59-6a8f-47a0-907a-a748a55ff456)
@@ -671,9 +671,128 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 
 # level 29-30 
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit29@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu được lưu ở 1 repository GIT từ link `ssh://bandit29-git@localhost/home/bandit29-git/repo` ở post 2220, mật khẩu của link là mật khẩu của level trước đó. Ta cần tạo 1 bản sao của repository đó về host để tìm mật khẩu
+
+1. do ta không được phép tạo bất kì cái gì ở tỏng thư mục home homedirectory, nên ta dùng `mktemp -d` để tạo 1 đường đẫn có đầy đủ quyền
+2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo` rồi nhập mật khẩu của level trước đó
+3. sau đó ta di chuyển vào file rồi kiếm tra và `cat` thử ra
+
+![image](https://github.com/user-attachments/assets/15d608d9-9d78-457b-aedf-e5e8b4c8e905)
+
+4. trong file không tồn tại mật khẩu, vậy ta sẽ kiếm tra file đã bị chỉnh sửa lần nào chưa bằng lệnh `git log`
+
+![image](https://github.com/user-attachments/assets/3ad8ea24-2687-4b5e-8dda-21d28c91d632)
+
+5. ta có thể thấy 1 vài file được tạo ở các nhành khác, vậy `git branch -a` để liệt kê các nhánh rồi di chuyển vào lần lượt các nhánh rồi kiểm tra và `cat` ra
+
+![image](https://github.com/user-attachments/assets/153d03fb-11ac-4add-ac64-4198a9723966)
+
+        mật khẩu: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
+
+6. `exit` để thoát khỏi level
 
 
+# level 30-31
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit30@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu được lưu ở 1 repository GIT từ link `ssh://bandit30-git@localhost/home/bandit30-git/repo` ở post 2220, mật khẩu của link là mật khẩu của level trước đó. Ta cần tạo 1 bản sao của repository đó về host để tìm mật khẩu
+
+1. do ta không được phép tạo bất kì cái gì ở tỏng thư mục home homedirectory, nên ta dùng `mktemp -d` để tạo 1 đường đẫn có đầy đủ quyền
+2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo` rồi nhập mật khẩu của level trước đó
+3. sau đó ta di chuyển vào file rồi kiếm tra và `cat` thử ra
+
+![image](https://github.com/user-attachments/assets/2873d349-39d5-4b36-af27-02bbd5dc9887)
+
+OK, đó là 1 cú lừa
+
+4. ta thử `git log --all` để check xem có chính sửa gì không, thì cũng 0 có gì. Dùng `git brench -a` cũng không thấy nhánh gì đặc biệt
+
+![image](https://github.com/user-attachments/assets/fb899ae1-c778-44b2-9113-e01ec3a49d77)
+![image](https://github.com/user-attachments/assets/dafd9161-2392-4c5b-a8a7-ac379d2ad0ac)
+
+5. ngoài những cách kiểm tra trên, trong GIT, `tag` dùng để đánh đấu 1 commit cụ thể trong mã nguồn, rõ hơn thì `tag` đánh dấu các phiên bản hoặc các thay đổi quan trọng trong lịch sử của mã nguồn
+6. vậy ta dùng `git tag` để kiểm ra điều đó thì thấy 1 mốc `secret`
+
+![image](https://github.com/user-attachments/assets/439cf73e-7e4f-49be-9fb2-e1ef93bfd286)
 
 
+7. dùng `git show secret` để đọc mốc này ta sẽ nhận được mật khẩu
+
+        mật khẩu: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+8. `exit` để thoát khỏi level
 
 
+# level 31-32
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit31@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu được lưu ở 1 repository GIT từ link `ssh://bandit31-git@localhost/home/bandit31-git/repo` ở post 2220, mật khẩu của link là mật khẩu của level trước đó. Ta cần tạo 1 bản sao của repository đó về host để tìm mật khẩu
+
+1. do ta không được phép tạo bất kì cái gì ở tỏng thư mục home homedirectory, nên ta dùng `mktemp -d` để tạo 1 đường đẫn có đầy đủ quyền
+2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo` rồi nhập mật khẩu của level trước đó
+3. sau đó ta di chuyển vào file rồi kiếm tra và `cat` thử ra
+
+![image](https://github.com/user-attachments/assets/8c78c7ce-7620-4a75-a019-1f3ebe47876d)
+
+bài muốn mình tạo 1 file `key.txt` có nội dụng `'May i come in'` rồi gửi tới `remote repository` 
+
+4. vậy ta tạo 1 file `key.txt` rồi ghi thông điệp vào như hình
+
+![image](https://github.com/user-attachments/assets/3a3ef2b4-255c-4fb0-8fbe-dd5056e11036)
+
+5. sau đó `git add -f key.txt` để gửi file `key.txt` lên danh sách theo dõi (staging area)
+        - `-f`: bắt buộc đưa file `key.txt` lên mà bỏ qua `.gitignore` vì có thể bị `gitignore` chặn không cho gửi lên
+6. `git commit -m "fbandit"` để tạo 1 commit để lưu thay đổi của từ danh sách theo dõi khi ta đưa file `key.txt` lên
+
+
+![image](https://github.com/user-attachments/assets/d75ebd70-4f5b-4f7f-bd1a-b0f2da6e7b92)
+
+7. sau khi tạo commit để lưu thay đổi ta cần gửi nó đến `remote repository` bằng lệnh `git push` rồi nhập mật khẩu cảu level trước vào sau đó ta sẽ nhận được mật khẩu
+
+![image](https://github.com/user-attachments/assets/7e5f26b5-8353-4773-9164-b7b03ac8f1ae)
+![image](https://github.com/user-attachments/assets/d65d8b7d-3891-4dfb-a7c9-38141fdce166)
+
+        mật khẩu: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
+8. `exit` để thoát khỏi level
+
+
+# level 32-33
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit32@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: After all this git stuff, it’s time for another escape. Good luck! :v
+
+1. sau khi login vào host, ta sẽ được cung cấp 1 upershell, uppershell này chuyển tất cả kí tự thành in hoa 
+
+![image](https://github.com/user-attachments/assets/2f12e7d8-8e8c-4ac0-9ebf-2fa894f9b561)
+
+2. ta cần chuyển đổi về shell mặc định của hệ thống thông qua `$0`
+        - `$0` là 1 biến đặc biệt trong bash, dùng để gọi tên shell mặc định
+        - trong trường hợp này `$0` sẽ giúp ta thoát khỏi `uppershell` và trở lại shell mặc định 
+
+![image](https://github.com/user-attachments/assets/df3633f4-5a56-4b4f-9ede-d66699442fec)
+
+3. ta có thể `whoami` để kiếm tra tên user
+
+![image](https://github.com/user-attachments/assets/6d7f5673-2f8c-4115-98ff-ba4c6288d008)
+
+
+4. `cat /etc/bandit_pass/bandit33` để lấy mật khẩu 
+
+![image](https://github.com/user-attachments/assets/a6519360-7ec0-4f40-b9f3-146c3d12600f)
+
+        mật khẩu: ![image](https://github.com/user-attachments/assets/e19c3ec3-de4a-4598-a98b-801c84965b97)
+
+5. `exit` để thoát khỏi level
+
+
+# level 33-34
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit33@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: At this moment, level 34 does not exist yet.
+1. `ls` để liệt kê các file trong hệ thống
+2. dùng lệnh `cat readme` để đọc file
+
+![image](https://github.com/user-attachments/assets/77ab3170-8090-45a6-93c2-92fa8badbb76)
+
+***TUYỆT VỜI***
