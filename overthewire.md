@@ -3,7 +3,8 @@
 **yêu cầu**: truy cập vào host bandit.labs.overthewire.org với tài khoản mật khẩu 
 1. truy cập bằng lệnh: `ssh bandit0@bandit.labs.overthewire.org -p 2220` sau đó nhập mật khẩu `bandit0`
 
-![image](https://github.com/user-attachments/assets/60bebfdf-f5dc-47e6-a056-52500e6c870d)
+![image](https://github.com/user-attachments/assets/e9ff2861-cc8c-4df4-9c75-eba52aa8c22b)
+
 
 # level 0-1
 
