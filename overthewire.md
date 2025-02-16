@@ -527,29 +527,45 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 ![image](https://github.com/user-attachments/assets/b380aa52-4f27-49c9-bb4b-bdba5e182e2f)
 
-6. 
+6. để tránh vc file đó sau khi gửi vào `bandit24` sẽ bị xóa luôn ta sẽ viết vào file 1 lệnh copy ngược lại dòng mật khẩu ở `bandit24` trong hệ thống như hình
+
+![image](https://github.com/user-attachments/assets/8629188b-43f4-4b66-b964-cde57fe9a6ac)
+
+7. sau đó gửi file này vào `bandit24` bằng lệnh `cp /tmp/tmp.u63lg9riaM /var/spool/bandit24/foo` sau đó đợi 60s rồi dùng lệnh `cat /tmp/tmp.u63lg9riaM` để đọc mẩt khẩu trong file 
+
+![image](https://github.com/user-attachments/assets/9b9e46d6-047b-47b3-942d-add38eec02a2)
+
+        mật khẩu: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+8. `exit` 2  để thoát khỏi level
+
+
+ # level 24-25
+ dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit24@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: sau khi gửi mật khẩu level trước và 1 pincode 4 số vào post 30002 ta sẽ nhận được mật khẩu, nhưng 0 có dữ liệu nào về pin nào đúng buộc p thử hết 10000 pin
+1. t dùng lệnh `for i {0000..9999}; do echo gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i; done | nc localhost 30002` 
+        - `for i {0000..9999}`: tạo 1 biến `i` chạy vòng lặp từ 0000 đến 9999
+        - `do echo gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i`: dùng lệnh `echo` in ra mật khẩu của level trước kết hợp với biến i chạy vòng lặp từng mã pincode một
+        - `| nc localhost 30002`: sau khi in ra bằng `echo` sẽ ngay lập tức nhập vào `localhost 30002` với netcat để thử kết quả
+
+
+![image](https://github.com/user-attachments/assets/ca0d7dd0-00ce-4a9b-80e9-d9c3b4beda4d)
+
+        vậy nếu pincode nằm ở giữa 0000 đến 9999 thì rất khó để thấy được 
+
+2. ta tối ưu bằng cách tạo 1 file bằng `mktemp -d` để có đầy đủ quyền, sau đó cd vào đường dẫn, rồi tạo 1 file `key.txt` để khi chạy netcat sẽ được in hết vào file `key.txt` bằng lệnh `for i {0000..9999}; do echo gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i; done | nc localhost 30002 >key.txt`
+
+3. sau đó `cat key.txt |sort| uniq` để sắp xếp lại rồi gộp những dòng trùng sau đó in ra ta được 
+
+![image](https://github.com/user-attachments/assets/72230138-73ce-480a-bc38-022adfe862f7)
+
+        mật khẩu: iCi86ttT4KSNe1armKiwbQNmB3YJP3q
+
+4. `exit` 2  để thoát khỏi level
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# level 25-26
 
 
 
