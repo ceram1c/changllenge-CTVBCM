@@ -355,7 +355,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
 
-10. `exit` 2  để thoát khỏi level
+10. `exit` 2 lần để thoát khỏi level
 
 
 # level 17-18
@@ -371,7 +371,7 @@ dòng trên là dòng khác ở `password.new` so với dòng dưới ở `passw
 
         mật khẩu: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
 
-2. `exit` 2  để thoát khỏi level
+2. `exit` để thoát khỏi level
 
 
 # level 18-19
@@ -395,7 +395,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 
-6. `exit` 2  để thoát khỏi level
+6. `exit` để thoát khỏi level
 
 
 # level 19-20 
@@ -414,7 +414,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 
-5. `exit` 2  để thoát khỏi level
+5. `exit` để thoát khỏi level
 
 # level 20-21
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit20@bandit.labs.overthewire.org -p 2220`
@@ -441,7 +441,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
 
-7. `exit` 2  để thoát khỏi level
+7. `exit` để thoát khỏi level
 
 # level 21-22
 dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit21@bandit.labs.overthewire.org -p 2220`
@@ -466,7 +466,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
 
-5. `exit` 2  để thoát khỏi level
+5. `exit` để thoát khỏi level
 
 
 
@@ -502,7 +502,7 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
         mật khẩu: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 
-7. `exit` 2  để thoát khỏi level
+7. `exit` để thoát khỏi level
 
 
 # level 23-24
@@ -536,11 +536,11 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 ![image](https://github.com/user-attachments/assets/9b9e46d6-047b-47b3-942d-add38eec02a2)
 
         mật khẩu: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
-8. `exit` 2  để thoát khỏi level
+8. `exit` để thoát khỏi level
 
 
  # level 24-25
- dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit24@bandit.labs.overthewire.org -p 2220`
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit24@bandit.labs.overthewire.org -p 2220`
 
 **yêu cầu**: sau khi gửi mật khẩu level trước và 1 pincode 4 số vào post 30002 ta sẽ nhận được mật khẩu, nhưng 0 có dữ liệu nào về pin nào đúng buộc p thử hết 10000 pin
 1. t dùng lệnh `for i {0000..9999}; do echo gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i; done | nc localhost 30002` 
@@ -559,15 +559,118 @@ dùng mật khẩu của level trước để truy cập vào host tiếp theo b
 
 ![image](https://github.com/user-attachments/assets/72230138-73ce-480a-bc38-022adfe862f7)
 
-        mật khẩu: iCi86ttT4KSNe1armKiwbQNmB3YJP3q
+        mật khẩu: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 
-4. `exit` 2  để thoát khỏi level
+4. `exit` để thoát khỏi level
 
 
 
 # level 25-26
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit25@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: tìm mật khẩu bằng cách loggin vào user `bandit26` tương tự level trước, nhưng shell của `bandit26` không phải là `/bin/bash` 
+
+1. `ls` để liệt kê các file trong hệ thống
+
+![image](https://github.com/user-attachments/assets/97db21ed-a3ed-480e-833d-2de9ff26686d)
 
 
+2. thử dụng lệnh `ssh bandit26@localhost -i bandit26.sshkey -p 2220` để loggin vào `bandit26` thì ngay lập tức bị thoát ra
+
+![image](https://github.com/user-attachments/assets/c7c9e93a-1eef-40dc-b6c2-550f3ff1dbb3)
+
+
+3. ta cần kiểm tra xem shell của `bandit26` là gì, vì vậy `cd /etc` sau đó `ls` để để liệt kê. Thông tin của người dùng thường được liên kê ở mục `/etc/passwd` các trường thường được ngăn cách nhau bằng dấu `:` theo thứ tự `tên_user : mật_khẩu(x) : UID : GID : thông_tin_user : shell_base`
+
+![image](https://github.com/user-attachments/assets/2d113d3b-8923-48d5-9778-b9aad371d740)
+
+
+4. `cat /usr/bin/showtext` để xem thông tin shell
+
+![image](https://github.com/user-attachments/assets/a186f10d-c710-4d74-a92a-bdefb19db84a)
+        - `exec`: dùng trong 1 script shell giống như thay thế shell bằng 1 chương trình hay 1 script khác
+        - `more`: 1 chương hiển thị văn bản trên các dòng code, lệnh này không chỉ hiển thị nội dung file, mà còn cho phép dừng lại, di chuyển lên xuống, qua lại trong file
+        - `exec more ~text.txt`: lệnh này dùng để thay thế shell hiện tại bằng 1 chương trình `more` sau đó mở tệp `~text.txt`, sau khi `more` kết thúc thì làm cho shell script cũng kết thúc khiến ta logout ngay sau khi login
+        - vậy ta cần cố làm `more` hoạt động trong lúc login bằng cách thu nhỏ tab terminal lại 
+        ![image](https://github.com/user-attachments/assets/93e95daf-0b46-4de4-9b5a-d7db1347a66e)
+
+5. sau khi `more` hoạt động ta nhấn `v` để mở 1 trình soạn thảo văn bản để xem và chỉnh sửa nội dung
+6. sau đó ta nhập `:set shell=/bin/bash` để chuyển môi trường shell về lại `/bin/bash` 
+
+![image](https://github.com/user-attachments/assets/f6a3ef62-b839-45da-868b-b94e7b830c24)
+
+7. `:sh` để di chuyển tới môi trường shell sau khi thay đổi, sau đó lấy mật khẩu bằng `cat /etc/bandit_pass/bandit26` như ở các level trước
+
+        mật khẩu: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+
+8. `exit` để thoát khỏi level
+
+
+# level 26-27
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit26@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: tìm mật khẩu nằm trong host `bandit26`
+1. ở level này ta sẽ bị logout ngay khi nhập mật khẩu, tương tự level 25 ta thu nhỏ tab terminal để làm more hoạt động, sau đó nhấn `v` để mở trình soạn thảo
+2. sau đó ta nhập `:set shell=/bin/bash` để chuyển môi trường shell về lại `/bin/bash`
+3. `:sh` để di chuyển tới môi trường shell sau khi thay đổi
+4. `ls` để liệt kê các file ta cso thể thấy file `bandit27-do` giống như ở `level 19`
+
+![image](https://github.com/user-attachments/assets/3a6c2aff-ba13-4a0b-a23c-1929cb757db2)
+
+
+5. tương tự `level 19` ta dùng lệnh `./bandit27-do cat /etc/bandit_pass/bandit27` để lấy mật khẩu
+
+        mật khẩu: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+6. `exit` để thoát khỏi level
+
+
+# level 27-28
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit27@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu được lưu ở 1 repository GIT từ link `ssh://bandit27-git@localhost/home/bandit27-git/repo` ở post 2220, mật khẩu của link là mật khẩu của level trước đó. Ta cần tạo 1 bản sao của repository đó về host để tìm mật khẩu
+
+1. do ta không được phép tạo bất kì cái gì ở tỏng thư mục home homedirectory, nên ta dùng `mktemp -d` để tạo 1 đường đẫn có đầy đủ quyền
+2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo` rồi nhập mật khẩu của level trước đó
+
+![image](https://github.com/user-attachments/assets/932f244f-8ca7-4eb3-a038-a5b53cd47eae)
+
+
+3. sau khi tải file về, ta di chuyển vào file rồi kiểm tra và in mật khẩu như sau:
+
+![image](https://github.com/user-attachments/assets/bcec1f76-2de9-4c9d-a214-105a4f1b1e84)
+
+        mật khẩu: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
+
+4. `exit` để thoát khỏi level
+
+
+# level 28-29
+dùng mật khẩu của level trước để truy cập vào host tiếp theo bằng lệnh `ssh bandit28@bandit.labs.overthewire.org -p 2220`
+
+**yêu cầu**: mật khẩu được lưu ở 1 repository GIT từ link `ssh://bandit28-git@localhost/home/bandit28-git/repo` ở post 2220, mật khẩu của link là mật khẩu của level trước đó. Ta cần tạo 1 bản sao của repository đó về host để tìm mật khẩu
+1. do ta không được phép tạo bất kì cái gì ở tỏng thư mục home homedirectory, nên ta dùng `mktemp -d` để tạo 1 đường đẫn có đầy đủ quyền
+2. di chuyển vào đường dẫn bằng `cd` rồi tạo 1 clone của git thông qua lệnh `git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo` rồi nhập mật khẩu của level trước đó
+3. sau đó ta di chuyển vào file rồi kiếm tra và `cat` thử ra
+
+![image](https://github.com/user-attachments/assets/8268ec59-6a8f-47a0-907a-a748a55ff456)
+
+
+4. mật khẩu đã bị ẩn đi như hình, vậy ta sẽ kiếm tra file đã bị chỉnh sửa lần nào chưa bằng lệnh `git log`
+
+![image](https://github.com/user-attachments/assets/2e2b5d03-4e97-49ab-950e-6e8605fbc3a3)
+
+
+5. file `README.md` đã bị chỉnh sửa tất cả 3 lần, ta thử chuyển qua lần lượt 2 lần commit trước đó bằng lênh `git checkout <tên_commit>`, rồi `ls` và `cat` ra
+6. ở lần commit thứ 2 có chưa mật khẩu
+
+![image](https://github.com/user-attachments/assets/ee82e2b0-0ecf-4399-840e-12da860cc932)
+
+        mật khẩu: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
+
+7. `exit` để thoát khỏi level
+
+
+# level 29-30 
 
 
 
